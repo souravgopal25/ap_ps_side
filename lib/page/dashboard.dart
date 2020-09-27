@@ -2,6 +2,8 @@ import 'package:ap_ps_side/card/drawer_card.dart';
 import 'package:ap_ps_side/slider/slider.dart';
 import 'package:flutter/material.dart';
 
+import 'news_page.dart';
+
 class Dashboard extends StatelessWidget {
   const Dashboard({Key key}) : super(key: key);
 
@@ -199,10 +201,10 @@ class Dashboard extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(15.0)),
                                 child: RaisedButton(
                                   onPressed: () {
-                                    /* Navigator.push(
+                                    Navigator.push(
                                         context,
                                         new MaterialPageRoute(
-                                            builder: (context) => NewsPage()));*/
+                                            builder: (context) => NewsPage()));
                                   },
                                   child: Column(
                                     children: [

@@ -34,6 +34,7 @@ dependencies:
   url_launcher: ^5.4.2
   http:
   carousel_slider: ^2.2.1
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:
