@@ -1,4 +1,5 @@
 import 'package:ap_ps_side/card/drawer_card.dart';
+import 'package:ap_ps_side/page/alerts.dart';
 import 'package:ap_ps_side/slider/slider.dart';
 import 'package:flutter/material.dart';
 
@@ -84,11 +85,11 @@ class Dashboard extends StatelessWidget {
                                       borderRadius:
                                           BorderRadius.circular(15.0)),
                                   onPressed: () {
-                                    /* Navigator.push(
+                                    Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                AnonymousRegistration()));*/
+                                                AlertGeneration()));
                                   },
                                   child: Column(
                                     children: [

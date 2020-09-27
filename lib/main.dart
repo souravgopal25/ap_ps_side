@@ -1,4 +1,5 @@
 import 'package:ap_ps_side/page/alerts.dart';
+import 'package:ap_ps_side/page/login_page.dart';
 import 'package:ap_ps_side/page/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -31,7 +32,7 @@ class _MyHomeState extends State<MyHome> {
         builder: (context, snapshot) {
           if (snapshot.hasError) {}
           if (snapshot.connectionState == ConnectionState.done) {
-            return AlertGeneration();
+            return LoginPage();
           }
           return Scaffold(
             body: Center(
