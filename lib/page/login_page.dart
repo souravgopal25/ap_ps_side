@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Image.network(
-              "https://images.unsplash.com/photo-1589441931743-900205c41d7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              "https://i.pinimg.com/736x/0e/a8/00/0ea800de8e9033282bdf73c4a086fe0a.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -65,17 +65,21 @@ class _LoginPageState extends State<LoginPage> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Card(
+                  color: Colors.white60.withOpacity(0.6),
                   elevation: 15,
                   child: Column(
                     children: <Widget>[
                       Container(
                         child: Text(
                           "Login",
-                          style: TextStyle(fontSize: 100, color: Colors.blue),
+                          style: TextStyle(
+                            fontSize: 65,
+                            color: Colors.black87,
+                          ),
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 40,
                       ),
                       LoginForm(
                           formKey: _formKey,

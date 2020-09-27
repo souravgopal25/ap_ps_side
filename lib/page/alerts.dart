@@ -15,6 +15,7 @@ class _AlertGenerationState extends State<AlertGeneration> {
   final alertTitleController = TextEditingController();
 
   final alertBodyController = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -40,6 +41,7 @@ class _AlertGenerationState extends State<AlertGeneration> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
+                            //TODO ADD FIELD FOR  FROM DATE TO DATE
                             TextFormField(
                               autocorrect: true,
                               keyboardType: TextInputType.text,
