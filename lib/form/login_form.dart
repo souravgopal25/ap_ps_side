@@ -145,8 +145,6 @@ class _LoginFormState extends State<LoginForm> {
                   labelText: "Password"),
             ),
             ButtonTheme(
-              buttonColor: Colors.lightBlueAccent,
-              splashColor: Colors.red,
               minWidth: MediaQuery.of(context).size.shortestSide,
               height: MediaQuery.of(context).size.height * 0.05,
               child: RaisedButton(

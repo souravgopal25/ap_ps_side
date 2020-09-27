@@ -52,6 +52,14 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Image.network(
+              "https://images.unsplash.com/photo-1589441931743-900205c41d7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              fit: BoxFit.cover,
+            ),
+          ),
           Center(
             child: SingleChildScrollView(
               child: Padding(
