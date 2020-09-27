@@ -103,7 +103,7 @@ class _AlertGenerationState extends State<AlertGeneration> {
                                         time: time);
                                     await Firestore.instance
                                         .collection("Alerts")
-                                        .doc("PoliceAlerts")
+                                        .doc("PoliceAlerts" + alert.time)
                                         .set(alert.toMap());
                                     Navigator.push(
                                         context,

@@ -15,13 +15,14 @@ class LoginForm extends StatefulWidget {
   final GlobalKey<FormState> _formKey;
   final TextEditingController emailController;
   final TextEditingController passController;
-  final phoneController = TextEditingController();
-  final otpController = TextEditingController();
+
   @override
   _LoginFormState createState() => _LoginFormState();
 }
 
 class _LoginFormState extends State<LoginForm> {
+  final phoneController = TextEditingController();
+  final otpController = TextEditingController();
   Future<bool> loginUser(String phone, BuildContext context) async {
     FirebaseAuth _auth = FirebaseAuth.instance;
     _auth.verifyPhoneNumber(
@@ -49,7 +50,7 @@ class _LoginFormState extends State<LoginForm> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       TextField(
-                        controller: widget.otpController,
+                        controller: otpController,
                       ),
                     ],
                   ),
@@ -59,7 +60,7 @@ class _LoginFormState extends State<LoginForm> {
                       textColor: Colors.white,
                       color: Colors.blue,
                       onPressed: () async {
-                        final code = widget.otpController.text.trim();
+                        final code = otpController.text.trim();
                         AuthCredential credential =
                             PhoneAuthProvider.credential(
                                 verificationId: verificationID, smsCode: code);
@@ -98,7 +99,7 @@ class _LoginFormState extends State<LoginForm> {
           children: <Widget>[
             TextFormField(
               keyboardType: TextInputType.phone,
-              controller: widget.phoneController,
+              controller: phoneController,
               maxLength: 10,
               validator: (String value) {
                 if (value.isEmpty) {
@@ -163,8 +164,7 @@ class _LoginFormState extends State<LoginForm> {
                           password: widget.passController.text.trim());
                       User user = result1.user;
                       if (user != null) {
-                        loginUser("+91" + widget.phoneController.text.trim(),
-                            context);
+                        loginUser("+91" + phoneController.text.trim(), context);
                       }
                     }
                   }
