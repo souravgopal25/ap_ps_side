@@ -1,12 +1,12 @@
 import 'package:ap_ps_side/card/drawer_card.dart';
 import 'package:ap_ps_side/page/alerts.dart';
+import 'package:ap_ps_side/page/news_page.dart';
 import 'package:ap_ps_side/slider/slider.dart';
 import 'package:flutter/material.dart';
 
-import 'news_page.dart';
 
-class Dashboard extends StatelessWidget {
-  const Dashboard({Key key}) : super(key: key);
+class AdminDashboard extends StatelessWidget {
+  const AdminDashboard({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +140,7 @@ class Dashboard extends StatelessWidget {
                                         color: Colors.white,
                                       ),
                                       Text(
-                                        "Fir in Premises",
+                                        "Create new Police Account",
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 42),
                                       ),
