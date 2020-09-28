@@ -55,7 +55,7 @@ class Menu extends StatelessWidget {
               style: TextStyle(fontSize: 25.0),
             ),
           ),
-          
+
           ListTile(
             leading: Icon(
               Icons.perm_device_information,
