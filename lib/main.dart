@@ -1,6 +1,8 @@
 import 'package:ap_ps_side/page/alerts.dart';
+import 'package:ap_ps_side/page/dashboard.dart';
 import 'package:ap_ps_side/page/login_page.dart';
 import 'package:ap_ps_side/page/splash_screen.dart';
+import 'package:ap_ps_side/police_account/police_signup_page1.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -32,7 +34,7 @@ class _MyHomeState extends State<MyHome> {
         builder: (context, snapshot) {
           if (snapshot.hasError) {}
           if (snapshot.connectionState == ConnectionState.done) {
-            return LoginPage();
+            return Dashboard();
           }
           return Scaffold(
             body: Center(

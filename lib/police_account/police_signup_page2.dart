@@ -3,16 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:file_picker/file_picker.dart';
 
 class Police_Account_Page2 extends StatefulWidget {
-  Police_Account_Page2 ({Key key, this.title}) : super (key : key);
+  Police_Account_Page2({Key key, this.title}) : super(key: key);
 
   final String title;
 
   _Police_Account_Page2 createState() => _Police_Account_Page2();
-
 }
 
 class _Police_Account_Page2 extends State<Police_Account_Page2> {
-
   String designation;
   String state;
   String district;
@@ -22,28 +20,23 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-
             children: <Widget>[
-
               SizedBox(
                 height: 20.0,
               ),
-
               CircleAvatar(
                 backgroundColor: Colors.blue,
                 radius: 20.0,
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
                 child: Divider(),
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
@@ -51,22 +44,17 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                     prefixIcon: Icon(Icons.assignment_ind),
                     labelText: 'Designation',
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.blue
-                      ),
+                      borderSide: BorderSide(color: Colors.blue),
                     ),
                     border: OutlineInputBorder(),
                   ),
-
                   onChanged: (value) {
                     setState(() {
                       designation = value;
                     });
                   },
                 ),
-
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
@@ -74,22 +62,17 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                     prefixIcon: Icon(Icons.location_city),
                     labelText: 'State',
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.blue
-                      ),
+                      borderSide: BorderSide(color: Colors.blue),
                     ),
                     border: OutlineInputBorder(),
                   ),
-
                   onChanged: (value) {
                     setState(() {
                       state = value;
                     });
                   },
                 ),
-
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
@@ -97,22 +80,17 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                     prefixIcon: Icon(Icons.room),
                     labelText: 'District',
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.blue
-                      ),
+                      borderSide: BorderSide(color: Colors.blue),
                     ),
                     border: OutlineInputBorder(),
                   ),
-
                   onChanged: (value) {
                     setState(() {
                       district = value;
                     });
                   },
                 ),
-
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
@@ -120,13 +98,10 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                     prefixIcon: Icon(Icons.location_city),
                     labelText: 'Police Station',
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.blue
-                      ),
+                      borderSide: BorderSide(color: Colors.blue),
                     ),
                     border: OutlineInputBorder(),
                   ),
-
                   onChanged: (value) {
                     setState(() {
                       police_station = value;
@@ -134,36 +109,19 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                   },
                 ),
               ),
-
-
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_box),
-                    labelText: 'Identity Card',
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.blue
-                      ),
-                    ),
-                    border: OutlineInputBorder(),
-                  ),
-
-                  onChanged: (value) {
-                    setState(() {
-                      id = value;
-                    });
-                  },
-                ),
-              ),
-
               RaisedButton(
+<<<<<<< HEAD
+                child: Text("Choose ID From Files-Manager"),
+                onPressed: () async {
+                  FilePickerResult result =
+                      await FilePicker.platform.pickFiles();
+=======
                 child: Text("Choose file/image from file manager"),
                 onPressed: () async{
                   FilePickerResult result = await FilePicker.platform.pickFiles();
+>>>>>>> ec341b11d942c0b10fe16bc1eea6a1d65238c5ff
 
-                  if(result != null) {
+                  if (result != null) {
                     PlatformFile file = result.files.first;
 
                     print(file.name);
@@ -174,44 +132,33 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                   }
                 },
               ),
-
-
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
                 child: MaterialButton(
-                  child: Text('Submit',
+                  child: Text(
+                    'Submit',
                     style: TextStyle(
                       color: Colors.white,
-                    ),),
+                    ),
+                  ),
                   color: Colors.blue,
                   onPressed: () {
-
                     print(designation);
                     print(state);
                     print(district);
-
                   },
                 ),
               ),
-
-
             ],
           ),
         ),
       ),
-
       floatingActionButton: FloatingActionButton(
         elevation: 5.0,
         child: new Icon(Icons.chevron_right),
         backgroundColor: Colors.blue,
-        onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (BuildContext context) => ()
-          ));
-        },
+        onPressed: () {},
       ),
-
     );
   }
-
 }

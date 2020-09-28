@@ -107,10 +107,15 @@ class _LoginFormState extends State<LoginForm> {
                 }
                 return null;
               },
+              style: TextStyle(fontSize: 20),
               decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "Enter Phone",
-                  labelText: "Phone"),
+                border: OutlineInputBorder(),
+                fillColor: Colors.black,
+                labelText: "Phone",
+                labelStyle: TextStyle(color: Colors.black, fontSize: 22),
+                hintStyle: TextStyle(color: Colors.black, fontSize: 18),
+                hintText: "Enter Phone ",
+              ),
             ),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
@@ -121,10 +126,14 @@ class _LoginFormState extends State<LoginForm> {
                 }
                 return null;
               },
+              style: TextStyle(fontSize: 20),
               decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "Enter Email",
-                  labelText: "Email"),
+                border: OutlineInputBorder(),
+                labelText: "Email",
+                hintText: "Enter Email",
+                labelStyle: TextStyle(color: Colors.black, fontSize: 22),
+                hintStyle: TextStyle(color: Colors.black, fontSize: 18),
+              ),
             ),
             SizedBox(
               height: 20,
@@ -133,6 +142,7 @@ class _LoginFormState extends State<LoginForm> {
               keyboardType: TextInputType.visiblePassword,
               obscureText: true,
               maxLength: 10,
+              style: TextStyle(fontSize: 20),
               controller: widget.passController,
               validator: (String value) {
                 if (value.length < 6) {
@@ -141,8 +151,10 @@ class _LoginFormState extends State<LoginForm> {
                 return null;
               },
               decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.black, fontSize: 22),
+                  hintStyle: TextStyle(color: Colors.black, fontSize: 18),
                   hintText: "Enter Password",
+                  border: OutlineInputBorder(),
                   labelText: "Password"),
             ),
             ButtonTheme(

@@ -69,7 +69,7 @@ class Menu extends StatelessWidget {
               color: Colors.blueAccent,
             ),
             title: Text(
-              'SignOut',
+              'Log out',
               style: TextStyle(fontSize: 25.0),
             ),
           ),
