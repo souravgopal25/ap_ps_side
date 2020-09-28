@@ -19,65 +19,61 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  height: 20.0,
-                ),
-                CircleAvatar(
-                  backgroundColor: Colors.blue,
-                  radius: 50.0,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                  child: Divider(),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.account_circle),
-                      labelText: 'Name',
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                      border: OutlineInputBorder(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(
+                height: 20.0,
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.blue,
+                radius: 40.0,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                child: Divider(),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.account_circle),
+                    labelText: 'Name',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue),
                     ),
-                    onChanged: (value) {
-                      setState(() {
-                        name = value;
-                      });
-                    },
+                    border: OutlineInputBorder(),
                   ),
+                  onChanged: (value) {
+                    setState(() {
+                      name = value;
+                    });
+                  },
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.account_circle),
-                      labelText: 'Email',
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                      border: OutlineInputBorder(),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.email),
+                    labelText: 'Email',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue),
                     ),
-                    onChanged: (value) {
-                      setState(() {
-                        name = value;
-                      });
-                    },
+                    border: OutlineInputBorder(),
                   ),
+                  onChanged: (value) {
+                    setState(() {
+                      name = value;
+                    });
+                  },
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                  child: TextField(
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                child: TextField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.account_circle,
-                      ),
+                      prefixIcon: Icon(Icons.phone),
                       labelText: 'Phone No.',
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.blue),
@@ -88,29 +84,27 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
                       setState(() {
                         name = value;
                       });
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.account_circle),
-                      labelText: 'Address',
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                      border: OutlineInputBorder(),
+                    }),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.location_city),
+                    labelText: 'Address',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue),
                     ),
-                    onChanged: (value) {
-                      setState(() {
-                        name = value;
-                      });
-                    },
+                    border: OutlineInputBorder(),
                   ),
+                  onChanged: (value) {
+                    setState(() {
+                      name = value;
+                    });
+                  },
                 ),
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),
