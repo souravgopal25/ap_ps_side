@@ -172,7 +172,27 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                     print(file.path);
                   }
                 },
-              )
+              ),
+
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
+                child: MaterialButton(
+                  child: Text('Submit',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),),
+                  color: Colors.blue,
+                  onPressed: () {
+
+                    print(designation);
+                    print(state);
+                    print(district);
+
+                  },
+                ),
+              ),
+
 
             ],
           ),
