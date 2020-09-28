@@ -32,16 +32,16 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
 
               CircleAvatar(
                 backgroundColor: Colors.blue,
-                radius: 20.0,
+                radius:40.0,
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: Divider(),
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.account_circle),
@@ -64,10 +64,10 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle),
+                    prefixIcon: Icon(Icons.email),
                     labelText: 'Email',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -87,10 +87,10 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle),
+                    prefixIcon: Icon(Icons.phone),
                     labelText: 'Phone No.',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -110,10 +110,10 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle),
+                    prefixIcon: Icon(Icons.location_city),
                     labelText: 'Address',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
