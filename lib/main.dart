@@ -34,7 +34,7 @@ class _MyHomeState extends State<MyHome> {
         builder: (context, snapshot) {
           if (snapshot.hasError) {}
           if (snapshot.connectionState == ConnectionState.done) {
-            return Police_Account_Page1();
+            return Dashboard();
           }
           return Scaffold(
             body: Center(

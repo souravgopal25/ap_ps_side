@@ -12,6 +12,9 @@ class Police_Account_Page1 extends StatefulWidget {
 
 class _Police_Account_Page1 extends State<Police_Account_Page1> {
   String name;
+  String email;
+  String phone;
+  String address;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +67,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
                   ),
                   onChanged: (value) {
                     setState(() {
-                      name = value;
+                      email = value;
                     });
                   },
                 ),
@@ -72,19 +75,20 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.phone),
-                      labelText: 'Phone No.',
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                      border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.phone),
+                    labelText: 'Phone No.',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue),
                     ),
-                    onChanged: (value) {
-                      setState(() {
-                        name = value;
-                      });
-                    }),
+                    border: OutlineInputBorder(),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      phone = value;
+                    });
+                  },
+                ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
@@ -99,7 +103,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
                   ),
                   onChanged: (value) {
                     setState(() {
-                      name = value;
+                      address = value;
                     });
                   },
                 ),
