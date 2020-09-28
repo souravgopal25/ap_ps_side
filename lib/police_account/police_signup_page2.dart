@@ -45,10 +45,10 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle),
+                    prefixIcon: Icon(Icons.assignment_ind),
                     labelText: 'Designation',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -68,10 +68,10 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle),
+                    prefixIcon: Icon(Icons.location_city),
                     labelText: 'State',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -91,10 +91,10 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle),
+                    prefixIcon: Icon(Icons.room),
                     labelText: 'District',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -114,10 +114,10 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
               ),
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle),
+                    prefixIcon: Icon(Icons.location_city),
                     labelText: 'Police Station',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -137,10 +137,10 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
 
 
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle),
+                    prefixIcon: Icon(Icons.account_box),
                     labelText: 'Identity Card',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
