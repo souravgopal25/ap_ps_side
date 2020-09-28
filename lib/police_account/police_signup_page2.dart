@@ -159,6 +159,7 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
               ),
 
               RaisedButton(
+                child: Text("Choose file/image from file manager"),
                 onPressed: () async{
                   FilePickerResult result = await FilePicker.platform.pickFiles();
 

@@ -14,6 +14,9 @@ class Police_Account_Page1 extends StatefulWidget {
 class _Police_Account_Page1 extends State<Police_Account_Page1> {
 
   String name;
+  String email;
+  String phone;
+  String address;
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +82,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
 
                   onChanged: (value) {
                     setState(() {
-                      name = value;
+                      email = value;
                     });
                   },
                 ),
@@ -102,7 +105,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
 
                   onChanged: (value) {
                     setState(() {
-                      name = value;
+                      phone = value;
                     });
                   },
                 ),
@@ -125,7 +128,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
 
                   onChanged: (value) {
                     setState(() {
-                      name = value;
+                      address = value;
                     });
                   },
                 ),
