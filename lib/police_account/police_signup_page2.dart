@@ -109,17 +109,14 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                   },
                 ),
               ),
-              RaisedButton(
-<<<<<<< HEAD
-                child: Text("Choose ID From Files-Manager"),
+              RaisedButton
+
                 onPressed: () async {
                   FilePickerResult result =
                       await FilePicker.platform.pickFiles();
-=======
                 child: Text("Choose file/image from file manager"),
                 onPressed: () async{
                   FilePickerResult result = await FilePicker.platform.pickFiles();
->>>>>>> ec341b11d942c0b10fe16bc1eea6a1d65238c5ff
 
                   if (result != null) {
                     PlatformFile file = result.files.first;
@@ -149,7 +146,8 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                   },
                 ),
               ),
-            ],
+
+    ],
           ),
         ),
       ),
