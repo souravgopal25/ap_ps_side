@@ -1,16 +1,19 @@
+import 'package:ap_ps_side/models/police_acc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:file_picker/file_picker.dart';
 
 class Police_Account_Page2 extends StatefulWidget {
-  Police_Account_Page2({Key key, this.title}) : super(key: key);
+  Police_Account_Page2({Key key, this.policeAccModel}) : super(key: key);
 
-  final String title;
+  final PoliceAccModel policeAccModel;
 
-  _Police_Account_Page2 createState() => _Police_Account_Page2();
+  _Police_Account_Page2 createState() => _Police_Account_Page2(policeAccModel);
 }
 
 class _Police_Account_Page2 extends State<Police_Account_Page2> {
+  _Police_Account_Page2(this.policeAccModel);
+  PoliceAccModel policeAccModel;
   String designation;
   String state;
   String district;
@@ -109,26 +112,22 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                   },
                 ),
               ),
-              RaisedButton
+              RaisedButton(
+                  child: Text("Choose file/image from file manager"),
+                  onPressed: () async {
+                    FilePickerResult result =
+                        await FilePicker.platform.pickFiles();
 
-                onPressed: () async {
-                  FilePickerResult result =
-                      await FilePicker.platform.pickFiles();
-                child: Text("Choose file/image from file manager"),
-                onPressed: () async{
-                  FilePickerResult result = await FilePicker.platform.pickFiles();
+                    if (result != null) {
+                      PlatformFile file = result.files.first;
 
-                  if (result != null) {
-                    PlatformFile file = result.files.first;
-
-                    print(file.name);
-                    print(file.bytes);
-                    print(file.size);
-                    print(file.extension);
-                    print(file.path);
-                  }
-                },
-              ),
+                      print(file.name);
+                      print(file.bytes);
+                      print(file.size);
+                      print(file.extension);
+                      print(file.path);
+                    }
+                  }),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
                 child: MaterialButton(
@@ -146,8 +145,7 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                   },
                 ),
               ),
-
-    ],
+            ],
           ),
         ),
       ),

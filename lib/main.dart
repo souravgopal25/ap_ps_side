@@ -1,6 +1,9 @@
+import 'package:ap_ps_side/admin/admin_homepage.dart';
 import 'package:ap_ps_side/page/alerts.dart';
+import 'package:ap_ps_side/page/case_detail.dart';
 import 'package:ap_ps_side/page/dashboard.dart';
 import 'package:ap_ps_side/page/login_page.dart';
+import 'package:ap_ps_side/page/qrcode_scanner.dart';
 import 'package:ap_ps_side/page/splash_screen.dart';
 import 'package:ap_ps_side/police_account/police_signup_page1.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +18,7 @@ void main() {
       primarySwatch: Colors.red,
       visualDensity: VisualDensity.adaptivePlatformDensity,
     ),
-    home: MyHome(),
+    home: AdminDashboard(),
   ));
 }
 

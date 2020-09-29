@@ -3,12 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/services.dart';
 
-void main() => runApp(MaterialApp(
-  debugShowCheckedModeBanner: false,
-));
-
 class QRCode extends StatefulWidget {
-
   @override
   _QRCode createState() => _QRCode();
 }
@@ -17,14 +12,14 @@ class _QRCode extends State<QRCode> {
   String result = "Hey there !";
 
   Future _scanQR() async {
-    try{
-      String qrResult = (await BarcodeScanner.scan()) as String;
+    try {
+      String qrResult = await BarcodeScanner.scan();
+      print(qrResult);
       setState(() {
         result = qrResult;
       });
-    }
-    on PlatformException catch (ex) {
-      if(ex.code == BarcodeScanner.cameraAccessDenied) {
+    } on PlatformException catch (ex) {
+      if (ex.code == BarcodeScanner.CameraAccessDenied) {
         setState(() {
           result = "Camera permission was denied";
         });
@@ -33,7 +28,6 @@ class _QRCode extends State<QRCode> {
           result = "Unknown Error $ex";
         });
       }
-
     } on FormatException {
       setState(() {
         result = "You pressed the back button before scanning";
@@ -49,9 +43,10 @@ class _QRCode extends State<QRCode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("QR Scanner"),
+        title: Text(
+          "Scan",
+        ),
       ),
-
       body: Center(
         child: Text(
           result,
@@ -65,8 +60,5 @@ class _QRCode extends State<QRCode> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
-
   }
 }
-
-

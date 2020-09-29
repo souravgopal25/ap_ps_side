@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Menu extends StatelessWidget {
-  const Menu({Key key}) : super(key: key);
+class MenuNav extends StatelessWidget {
+  const MenuNav({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,6 @@ class Menu extends StatelessWidget {
               style: TextStyle(fontSize: 25.0),
             ),
           ),
-
           ListTile(
             leading: Icon(
               Icons.translate,
@@ -44,7 +43,6 @@ class Menu extends StatelessWidget {
               style: TextStyle(fontSize: 25.0),
             ),
           ),
-
           ListTile(
             leading: Icon(
               Icons.call,
@@ -52,17 +50,6 @@ class Menu extends StatelessWidget {
             ),
             title: Text(
               'Helpline',
-              style: TextStyle(fontSize: 25.0),
-            ),
-          ),
-
-          ListTile(
-            leading: Icon(
-              Icons.perm_device_information,
-              color: Colors.blueAccent,
-            ),
-            title: Text(
-              'SignOut',
               style: TextStyle(fontSize: 25.0),
             ),
           ),

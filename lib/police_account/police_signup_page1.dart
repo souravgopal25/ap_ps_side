@@ -1,3 +1,4 @@
+import 'package:ap_ps_side/models/police_acc.dart';
 import 'package:ap_ps_side/police_account/police_signup_page2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +40,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
+                  keyboardType: TextInputType.name,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.account_circle),
                     labelText: 'Name',
@@ -57,6 +59,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.email),
                     labelText: 'Email',
@@ -67,7 +70,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
                   ),
                   onChanged: (value) {
                     setState(() {
-                      email = value;
+                      email = value.trim();
                     });
                   },
                 ),
@@ -75,6 +78,8 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
+                  keyboardType: TextInputType.phone,
+                  maxLength: 10,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.phone),
                     labelText: 'Phone No.',
@@ -85,7 +90,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
                   ),
                   onChanged: (value) {
                     setState(() {
-                      phone = value;
+                      phone = value.trim();
                     });
                   },
                 ),
@@ -93,6 +98,8 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
+                  minLines: 2,
+                  maxLines: 6,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.location_city),
                     labelText: 'Address',
@@ -117,6 +124,8 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
         child: new Icon(Icons.chevron_right),
         backgroundColor: Colors.blue,
         onPressed: () {
+          PoliceAccModel object = PoliceAccModel(
+              name: name, email: email, phone: phone, address: address);
           Navigator.of(context).push(MaterialPageRoute(
               builder: (BuildContext context) => (Police_Account_Page2())));
         },

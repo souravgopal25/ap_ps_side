@@ -1,9 +1,10 @@
+import 'package:ap_ps_side/admin/navigation_pane_admin.dart';
 import 'package:ap_ps_side/card/drawer_card.dart';
 import 'package:ap_ps_side/page/alerts.dart';
 import 'package:ap_ps_side/page/news_page.dart';
+import 'package:ap_ps_side/police_account/police_signup_page1.dart';
 import 'package:ap_ps_side/slider/slider.dart';
 import 'package:flutter/material.dart';
-
 
 class AdminDashboard extends StatelessWidget {
   const AdminDashboard({Key key}) : super(key: key);
@@ -79,11 +80,11 @@ class AdminDashboard extends StatelessWidget {
                                 splashColor: Colors.red,
                                 minWidth: 350,
                                 height:
-                                MediaQuery.of(context).size.height * 0.15,
+                                    MediaQuery.of(context).size.height * 0.15,
                                 child: RaisedButton(
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
-                                      BorderRadius.circular(15.0)),
+                                          BorderRadius.circular(15.0)),
                                   onPressed: () {
                                     Navigator.push(
                                         context,
@@ -120,17 +121,17 @@ class AdminDashboard extends StatelessWidget {
                                 splashColor: Colors.red,
                                 minWidth: 350,
                                 height:
-                                MediaQuery.of(context).size.height * 0.15,
+                                    MediaQuery.of(context).size.height * 0.15,
                                 child: RaisedButton(
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
-                                      BorderRadius.circular(15.0)),
+                                          BorderRadius.circular(15.0)),
                                   onPressed: () {
-                                    /* Navigator.push(
+                                    Navigator.push(
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                UserRegistration()));*/
+                                                Police_Account_Page1()));
                                   },
                                   child: Column(
                                     children: [
@@ -141,8 +142,10 @@ class AdminDashboard extends StatelessWidget {
                                       ),
                                       Text(
                                         "Create new Police Account",
+                                        textScaleFactor: 1.5,
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 42),
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -159,45 +162,10 @@ class AdminDashboard extends StatelessWidget {
                               ButtonTheme(
                                 buttonColor: Colors.lightBlueAccent,
                                 splashColor: Colors.red,
-                                minWidth: 165,
+                                minWidth:
+                                    MediaQuery.of(context).size.width * 0.8,
                                 height:
-                                MediaQuery.of(context).size.height * 0.15,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15.0)),
-                                child: RaisedButton(
-                                  onPressed: () {
-                                    /* Navigator.push(
-                                        context,
-                                        new MaterialPageRoute(
-                                            builder: (context) => Alerts()));*/
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Icon(
-                                        Icons.query_builder,
-                                        size: 40,
-                                        color: Colors.white,
-                                      ),
-                                      Text(
-                                        "Scan ",
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 35),
-                                      ),
-                                      Text(
-                                        "Approve ",
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 35),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              ButtonTheme(
-                                buttonColor: Colors.lightBlueAccent,
-                                splashColor: Colors.red,
-                                minWidth: 165,
-                                height:
-                                MediaQuery.of(context).size.height * 0.15,
+                                    MediaQuery.of(context).size.height * 0.15,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15.0)),
                                 child: RaisedButton(
@@ -235,7 +203,7 @@ class AdminDashboard extends StatelessWidget {
           ),
         ),
       ),
-      drawer: Menu(),
+      drawer: MenuNav(),
     );
   }
 }
