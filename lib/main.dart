@@ -1,6 +1,6 @@
 import 'package:ap_ps_side/admin/admin_homepage.dart';
 import 'package:ap_ps_side/page/alerts.dart';
-import 'package:ap_ps_side/page/case_detail.dart';
+import 'package:ap_ps_side/page/Annomouscase_detail.dart';
 import 'package:ap_ps_side/page/dashboard.dart';
 import 'package:ap_ps_side/page/login_page.dart';
 import 'package:ap_ps_side/page/qrcode_scanner.dart';
@@ -18,7 +18,7 @@ void main() {
       primarySwatch: Colors.red,
       visualDensity: VisualDensity.adaptivePlatformDensity,
     ),
-    home: CaseDetail(),
+    home: MyHome(),
   ));
 }
 
@@ -37,7 +37,7 @@ class _MyHomeState extends State<MyHome> {
         builder: (context, snapshot) {
           if (snapshot.hasError) {}
           if (snapshot.connectionState == ConnectionState.done) {
-            return Dashboard();
+            return AnnCaseDetail();
           }
           return Scaffold(
             body: Center(
