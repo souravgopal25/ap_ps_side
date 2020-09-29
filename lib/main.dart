@@ -18,7 +18,7 @@ void main() {
       primarySwatch: Colors.red,
       visualDensity: VisualDensity.adaptivePlatformDensity,
     ),
-    home: AdminDashboard(),
+    home: CaseDetail(),
   ));
 }
 

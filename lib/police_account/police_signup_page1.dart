@@ -16,6 +16,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
   String email;
   String phone;
   String address;
+  String pass;
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +79,26 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
                 child: TextField(
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.security),
+                    labelText: 'Password',
+                    hintText: "Enter 6+ characters",
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue),
+                    ),
+                    border: OutlineInputBorder(),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      pass = value.trim();
+                    });
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                child: TextField(
                   keyboardType: TextInputType.phone,
                   maxLength: 10,
                   decoration: InputDecoration(
@@ -125,9 +146,15 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
         backgroundColor: Colors.blue,
         onPressed: () {
           PoliceAccModel object = PoliceAccModel(
-              name: name, email: email, phone: phone, address: address);
+              name: name,
+              email: email,
+              phone: phone,
+              address: address,
+              pass: pass);
           Navigator.of(context).push(MaterialPageRoute(
-              builder: (BuildContext context) => (Police_Account_Page2())));
+              builder: (BuildContext context) => (Police_Account_Page2(
+                    policeAccModel: object,
+                  ))));
         },
       ),
     );

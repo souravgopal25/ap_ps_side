@@ -1,7 +1,14 @@
+import 'dart:io';
+
 import 'package:ap_ps_side/models/police_acc.dart';
+import 'package:ap_ps_side/page/dashboard.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:file_picker/file_picker.dart';
+
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Police_Account_Page2 extends StatefulWidget {
   Police_Account_Page2({Key key, this.policeAccModel}) : super(key: key);
@@ -112,22 +119,6 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                   },
                 ),
               ),
-              RaisedButton(
-                  child: Text("Choose file/image from file manager"),
-                  onPressed: () async {
-                    FilePickerResult result =
-                        await FilePicker.platform.pickFiles();
-
-                    if (result != null) {
-                      PlatformFile file = result.files.first;
-
-                      print(file.name);
-                      print(file.bytes);
-                      print(file.size);
-                      print(file.extension);
-                      print(file.path);
-                    }
-                  }),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
                 child: MaterialButton(
@@ -138,10 +129,24 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
                     ),
                   ),
                   color: Colors.blue,
-                  onPressed: () {
+                  onPressed: () async {
+                    // policeAccModel.desig = designation;
+                    /*policeAccModel.state = state;
+                    policeAccModel.district = district;*/
                     print(designation);
                     print(state);
                     print(district);
+                    await Firestore.instance
+                        .collection("Profile_Police")
+                        .doc(policeAccModel.name)
+                        .set(policeAccModel.toMap());
+
+                    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                        email: policeAccModel.email,
+                        password: policeAccModel.pass);
+
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Dashboard()));
                   },
                 ),
               ),

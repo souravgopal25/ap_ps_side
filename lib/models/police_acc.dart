@@ -10,6 +10,7 @@ class PoliceAccModel {
   String district;
   String ps;
   String filePath;
+  String pass;
   PoliceAccModel({
     this.name,
     this.email,
@@ -20,6 +21,7 @@ class PoliceAccModel {
     this.district,
     this.ps,
     this.filePath,
+    this.pass,
   });
 
   PoliceAccModel copyWith({
@@ -32,6 +34,7 @@ class PoliceAccModel {
     String district,
     String ps,
     String filePath,
+    String pass,
   }) {
     return PoliceAccModel(
       name: name ?? this.name,
@@ -43,6 +46,7 @@ class PoliceAccModel {
       district: district ?? this.district,
       ps: ps ?? this.ps,
       filePath: filePath ?? this.filePath,
+      pass: pass ?? this.pass,
     );
   }
 
@@ -57,6 +61,7 @@ class PoliceAccModel {
       'district': district,
       'ps': ps,
       'filePath': filePath,
+      'pass': pass,
     };
   }
 
@@ -73,6 +78,7 @@ class PoliceAccModel {
       district: map['district'],
       ps: map['ps'],
       filePath: map['filePath'],
+      pass: map['pass'],
     );
   }
 
@@ -83,7 +89,7 @@ class PoliceAccModel {
 
   @override
   String toString() {
-    return 'PoliceAccModel(name: $name, email: $email, phone: $phone, address: $address, desig: $desig, state: $state, district: $district, ps: $ps, filePath: $filePath)';
+    return 'PoliceAccModel(name: $name, email: $email, phone: $phone, address: $address, desig: $desig, state: $state, district: $district, ps: $ps, filePath: $filePath, pass: $pass)';
   }
 
   @override
@@ -99,7 +105,8 @@ class PoliceAccModel {
         o.state == state &&
         o.district == district &&
         o.ps == ps &&
-        o.filePath == filePath;
+        o.filePath == filePath &&
+        o.pass == pass;
   }
 
   @override
@@ -112,6 +119,7 @@ class PoliceAccModel {
         state.hashCode ^
         district.hashCode ^
         ps.hashCode ^
-        filePath.hashCode;
+        filePath.hashCode ^
+        pass.hashCode;
   }
 }
