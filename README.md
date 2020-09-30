@@ -1,6 +1,6 @@
 # ap_ps_side
 
-A new Flutter project.
+A flutter project created for the Police Side and Admin  for Assam Hackathon.
 
 ## Getting Started
 
