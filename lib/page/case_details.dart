@@ -1,8 +1,10 @@
+import 'package:ap_ps_side/page/Annomouscase_detail.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class CaseDetails extends StatelessWidget {
-  const CaseDetails({Key key}) : super(key: key);
+  final String keyword;
+  const CaseDetails({Key key, this.keyword}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,16 +14,23 @@ class CaseDetails extends StatelessWidget {
       ),
       body: FutureBuilder(
           future: Firestore.instance
-              .collection("FIR")
-              .document("Jamshedpur ")
+              .collection("FIR1")
+              .document(keyword.trim())
               .get(),
           builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
             if (snapshot.hasData) {
               print(snapshot.data.data());
+              print(snapshot.data.data().runtimeType);
+              Map<String, dynamic> map = snapshot.data.data();
+              print(map);
 
               /* Map<String, Future> map = snapshot.data.data;
               print(map);*/
-              return Text("Hello");
+              return SingleChildScrollView(
+                child: CaseCard(
+                  map: map,
+                ),
+              );
             } else if (snapshot.hasError) {
               return Text("ERROR");
             } else {

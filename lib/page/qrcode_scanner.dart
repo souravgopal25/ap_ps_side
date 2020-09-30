@@ -1,3 +1,5 @@
+import 'package:ap_ps_side/page/case_details.dart';
+import 'package:ap_ps_side/page/news_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
@@ -16,7 +18,12 @@ class _QRCode extends State<QRCode> {
       String qrResult = await BarcodeScanner.scan();
       print(qrResult);
       setState(() {
-        result = qrResult;
+        Navigator.push(
+            context,
+            new MaterialPageRoute(
+                builder: (context) => CaseDetails(
+                      keyword: qrResult,
+                    )));
       });
     } on PlatformException catch (ex) {
       if (ex.code == BarcodeScanner.CameraAccessDenied) {

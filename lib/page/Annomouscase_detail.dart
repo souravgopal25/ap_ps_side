@@ -1,3 +1,4 @@
+import 'package:ap_ps_side/page/dashboard.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -33,9 +34,8 @@ class AnnCaseDetail extends StatelessWidget {
 }
 
 class CaseCard extends StatelessWidget {
-  const CaseCard({
-    Key key,
-  }) : super(key: key);
+  final Map<String, dynamic> map;
+  const CaseCard({Key key, this.map}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,49 +46,36 @@ class CaseCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Row(
-              children: [
-                Text(
-                  "Name : ",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text("Sourav Sharma",
-                    style: TextStyle(
-                      fontSize: 40,
-                    )),
-              ],
+            Text(
+              "Case Type",
+              style: TextStyle(fontSize: 40),
+            ),
+            Text(
+              map["caseType"],
+              style: TextStyle(fontSize: 35),
+            ),
+            Text(
+              "Case Title",
+              style: TextStyle(fontSize: 40),
+            ),
+            Text(
+              map["caseTitle"],
+              style: TextStyle(fontSize: 35),
             ),
             Text(
               "Case Description",
               style: TextStyle(fontSize: 40),
             ),
             Text(
-              " CASE",
+              map["description"],
               style: TextStyle(fontSize: 35),
-            ),
-            Text(
-              "Case Filled Date :",
-              style: TextStyle(fontSize: 40),
-            ),
-            Text(
-              "26/09/2020",
-              style: TextStyle(fontSize: 40),
             ),
             Text(
               "Suspects",
               style: TextStyle(fontSize: 40),
             ),
             Text(
-              "hdbvhjdsbv",
-              style: TextStyle(fontSize: 40),
-            ),
-            Text(
-              "Evidence",
-              style: TextStyle(fontSize: 40),
-            ),
-            Text(
-              "Evidences",
+              map["suspect"],
               style: TextStyle(fontSize: 40),
             ),
             Row(
@@ -102,7 +89,18 @@ class CaseCard extends StatelessWidget {
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0)),
-                    onPressed: () {},
+                    onPressed: () async {
+                      map["status"] = "1";
+                      await Firestore.instance
+                          .collection("FIR1")
+                          .doc(map["city"] + map["caseTitle"])
+                          .set(map);
+
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => Dashboard()));
+                    },
                     child: Row(
                       children: [
                         Icon(Icons.arrow_upward),
@@ -122,7 +120,18 @@ class CaseCard extends StatelessWidget {
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0)),
-                    onPressed: () {},
+                    onPressed: () async {
+                      map["status"] = "-1";
+                      await Firestore.instance
+                          .collection("FIR1")
+                          .doc(map["city"] + map["caseTitle"])
+                          .set(map);
+
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => Dashboard()));
+                    },
                     child: Row(
                       children: [
                         Icon(Icons.arrow_downward),

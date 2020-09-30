@@ -7,19 +7,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:image_picker/image_picker.dart';
-
-class Police_Account_Page2 extends StatefulWidget {
-  Police_Account_Page2({Key key, this.policeAccModel}) : super(key: key);
+class PoliceAccountPage2 extends StatefulWidget {
+  PoliceAccountPage2({Key key, this.policeAccModel}) : super(key: key);
 
   final PoliceAccModel policeAccModel;
 
-  _Police_Account_Page2 createState() => _Police_Account_Page2(policeAccModel);
+  _PoliceAccountPage2 createState() => _PoliceAccountPage2(policeAccModel);
 }
 
-class _Police_Account_Page2 extends State<Police_Account_Page2> {
-  _Police_Account_Page2(this.policeAccModel);
+class _PoliceAccountPage2 extends State<PoliceAccountPage2> {
+  _PoliceAccountPage2(this.policeAccModel);
   PoliceAccModel policeAccModel;
   String designation;
   String state;
@@ -30,7 +27,40 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Container(
+          child: Row(
+            children: <Widget>[
+              Image.asset(
+                "assets/ashoka.jpeg",
+                height: 100,
+                fit: BoxFit.contain,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Column(
+                children: [
+                  Text(
+                    "GOVERMENT OF ASSAM",
+                    style: TextStyle(color: Colors.black, fontSize: 25),
+                  ),
+                  Text(
+                    "ASSAM POLICE",
+                    style: TextStyle(
+                        color: Colors.blue[400],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+        toolbarHeight: 120,
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -38,10 +68,6 @@ class _Police_Account_Page2 extends State<Police_Account_Page2> {
             children: <Widget>[
               SizedBox(
                 height: 20.0,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                radius: 20.0,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 1.0, horizontal: 1.0),

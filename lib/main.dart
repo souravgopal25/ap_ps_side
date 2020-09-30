@@ -19,7 +19,7 @@ void main() {
       primarySwatch: Colors.red,
       visualDensity: VisualDensity.adaptivePlatformDensity,
     ),
-    home: Selector(),
+    home: MyHome(),
   ));
 }
 
@@ -38,7 +38,7 @@ class _MyHomeState extends State<MyHome> {
         builder: (context, snapshot) {
           if (snapshot.hasError) {}
           if (snapshot.connectionState == ConnectionState.done) {
-            return Dashboard();
+            return CaseDetails();
           }
           return Scaffold(
             body: Center(

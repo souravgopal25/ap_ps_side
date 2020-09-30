@@ -1,4 +1,3 @@
-import 'package:ap_ps_side/card/drawer_card.dart';
 import 'package:ap_ps_side/page/admin/navigation_pane_admin.dart';
 import 'package:ap_ps_side/page/alerts.dart';
 import 'package:ap_ps_side/page/news_page.dart';
@@ -132,7 +131,7 @@ class AdminDashboard extends StatelessWidget {
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                Police_Account_Page1()));
+                                                PoliceAccountPage1()));
                                   },
                                   child: Column(
                                     children: [

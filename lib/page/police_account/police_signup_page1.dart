@@ -1,18 +1,19 @@
 import 'package:ap_ps_side/models/police_acc.dart';
-import 'package:ap_ps_side/page/police_account/police_signup_page2.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Police_Account_Page1 extends StatefulWidget {
-  Police_Account_Page1({Key key, this.title}) : super(key: key);
+import 'police_signup_page2.dart';
+
+class PoliceAccountPage1 extends StatefulWidget {
+  PoliceAccountPage1({Key key, this.title}) : super(key: key);
 
   final String title;
 
-  _Police_Account_Page1 createState() => _Police_Account_Page1();
+  _PoliceAccountPage1 createState() => _PoliceAccountPage1();
 }
 
-class _Police_Account_Page1 extends State<Police_Account_Page1> {
+class _PoliceAccountPage1 extends State<PoliceAccountPage1> {
   String name;
   String email;
   String phone;
@@ -22,7 +23,40 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Container(
+          child: Row(
+            children: <Widget>[
+              Image.asset(
+                "assets/ashoka.jpeg",
+                height: 100,
+                fit: BoxFit.contain,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Column(
+                children: [
+                  Text(
+                    "GOVERMENT OF ASSAM",
+                    style: TextStyle(color: Colors.black, fontSize: 25),
+                  ),
+                  Text(
+                    "ASSAM POLICE",
+                    style: TextStyle(
+                        color: Colors.blue[400],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+        toolbarHeight: 120,
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -30,10 +64,6 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
             children: <Widget>[
               SizedBox(
                 height: 20.0,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                radius: 40.0,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
@@ -153,7 +183,7 @@ class _Police_Account_Page1 extends State<Police_Account_Page1> {
               address: address,
               pass: pass);
           Navigator.of(context).push(MaterialPageRoute(
-              builder: (BuildContext context) => (Police_Account_Page2(
+              builder: (BuildContext context) => (PoliceAccountPage2(
                     policeAccModel: object,
                   ))));
         },
