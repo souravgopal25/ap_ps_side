@@ -1,3 +1,4 @@
+import 'package:ap_ps_side/page/selector.dart';
 import 'package:flutter/material.dart';
 
 class Menu extends StatelessWidget {
@@ -72,6 +73,10 @@ class Menu extends StatelessWidget {
               'Log out',
               style: TextStyle(fontSize: 25.0),
             ),
+            onTap: () {
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => Selector()));
+            },
           ),
         ],
       ),

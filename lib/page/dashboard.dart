@@ -1,5 +1,7 @@
 import 'package:ap_ps_side/card/drawer_card.dart';
 import 'package:ap_ps_side/page/alerts.dart';
+import 'package:ap_ps_side/page/qrcode_scanner.dart';
+import 'package:ap_ps_side/page/report/fir_page1.dart';
 import 'package:ap_ps_side/slider/slider.dart';
 import 'package:flutter/material.dart';
 
@@ -126,11 +128,11 @@ class Dashboard extends StatelessWidget {
                                       borderRadius:
                                           BorderRadius.circular(15.0)),
                                   onPressed: () {
-                                    /* Navigator.push(
+                                    Navigator.push(
                                         context,
                                         new MaterialPageRoute(
                                             builder: (context) =>
-                                                UserRegistration()));*/
+                                                UserRegistration()));
                                   },
                                   child: Column(
                                     children: [
@@ -166,10 +168,10 @@ class Dashboard extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(15.0)),
                                 child: RaisedButton(
                                   onPressed: () {
-                                    /* Navigator.push(
+                                    Navigator.push(
                                         context,
                                         new MaterialPageRoute(
-                                            builder: (context) => Alerts()));*/
+                                            builder: (context) => QRCode()));
                                   },
                                   child: Column(
                                     children: [
