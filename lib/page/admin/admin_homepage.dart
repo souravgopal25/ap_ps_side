@@ -1,8 +1,9 @@
-import 'package:ap_ps_side/admin/navigation_pane_admin.dart';
 import 'package:ap_ps_side/card/drawer_card.dart';
+import 'package:ap_ps_side/page/admin/navigation_pane_admin.dart';
 import 'package:ap_ps_side/page/alerts.dart';
 import 'package:ap_ps_side/page/news_page.dart';
-import 'package:ap_ps_side/police_account/police_signup_page1.dart';
+import 'package:ap_ps_side/page/police_account/police_signup_page1.dart';
+
 import 'package:ap_ps_side/slider/slider.dart';
 import 'package:flutter/material.dart';
 

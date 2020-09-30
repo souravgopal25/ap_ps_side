@@ -140,7 +140,7 @@ class Dashboard extends StatelessWidget {
                                         color: Colors.white,
                                       ),
                                       Text(
-                                        "Fir in Premises",
+                                        "Register FIR ",
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 42),
                                       ),
@@ -174,7 +174,7 @@ class Dashboard extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       Icon(
-                                        Icons.query_builder,
+                                        Icons.camera,
                                         size: 40,
                                         color: Colors.white,
                                       ),

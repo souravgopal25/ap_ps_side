@@ -1,5 +1,6 @@
 import 'package:ap_ps_side/models/police_acc.dart';
-import 'package:ap_ps_side/police_account/police_signup_page2.dart';
+import 'package:ap_ps_side/page/police_account/police_signup_page2.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
