@@ -8,6 +8,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: 'Flutter Demo',
     theme: ThemeData(
       primarySwatch: Colors.red,
