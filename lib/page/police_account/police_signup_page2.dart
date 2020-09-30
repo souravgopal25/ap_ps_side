@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:ap_ps_side/models/police_acc.dart';
+import 'package:ap_ps_side/page/admin/admin_homepage.dart';
 import 'package:ap_ps_side/page/dashboard.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -168,20 +169,16 @@ class _PoliceAccountPage2 extends State<PoliceAccountPage2> {
                         email: policeAccModel.email,
                         password: policeAccModel.pass);
 
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Dashboard()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AdminDashboard()));
                   },
                 ),
               ),
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        elevation: 5.0,
-        child: new Icon(Icons.chevron_right),
-        backgroundColor: Colors.blue,
-        onPressed: () {},
       ),
     );
   }

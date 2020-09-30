@@ -1,3 +1,4 @@
+import 'package:ap_ps_side/page/selector.dart';
 import 'package:flutter/material.dart';
 
 class MenuNav extends StatelessWidget {
@@ -52,6 +53,20 @@ class MenuNav extends StatelessWidget {
               'Helpline',
               style: TextStyle(fontSize: 25.0),
             ),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.perm_device_information,
+              color: Colors.blueAccent,
+            ),
+            title: Text(
+              'Log out',
+              style: TextStyle(fontSize: 25.0),
+            ),
+            onTap: () {
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (context) => Selector()));
+            },
           ),
         ],
       ),
