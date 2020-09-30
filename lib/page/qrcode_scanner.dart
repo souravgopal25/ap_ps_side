@@ -50,9 +50,35 @@ class _QRCode extends State<QRCode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Scan",
+        title: Container(
+          child: Row(
+            children: <Widget>[
+              Image.asset(
+                "assets/ashoka.jpeg",
+                height: 100,
+                fit: BoxFit.contain,
+              ),
+              Column(
+                children: [
+                  Text(
+                    "GOVERMENT OF ASSAM",
+                    style: TextStyle(color: Colors.black, fontSize: 15),
+                  ),
+                  Text(
+                    "ASSAM POLICE",
+                    style: TextStyle(
+                        color: Colors.blue[400],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
+        toolbarHeight: 120,
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
       ),
       body: Center(
         child: Text(

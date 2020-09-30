@@ -1,4 +1,4 @@
-import 'package:ap_ps_side/page/dashboard.dart';
+import 'package:ap_ps_side/page/selector.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:async';
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.push(
-          context, new MaterialPageRoute(builder: (context) => Dashboard()));
+          context, new MaterialPageRoute(builder: (context) => Selector()));
     });
   }
 
